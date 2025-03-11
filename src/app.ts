@@ -16,6 +16,7 @@ program.parse();
 function app(url: string) {
   if (!isValidURL(url)) {
     console.log("❌ Invalid URL format");
+    return;
   }
 }
 

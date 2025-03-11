@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Command } from "commander";
 import { VERSION } from "./utils/consts";
 import goodbye from "./utils/goodbye";

@@ -1,6 +1,8 @@
 import { Command } from "commander";
 import { VERSION } from "./utils/consts";
 import goodbye from "./utils/goodbye";
+import isValidURL from "./utils/isValidURL";
+import runTest from "./core/functions/runLoadTest";
 
 const program = new Command();
 
@@ -13,11 +15,13 @@ program.argument("<url>", "entry URL to crawl").action(app);
 
 program.parse();
 
-function app(url: string) {
+async function app(url: string) {
   if (!isValidURL(url)) {
     console.log("❌ Invalid URL format");
     return;
   }
+
+  await runTest([url]);
 }
 
 process.on("uncaughtException", (error) => {

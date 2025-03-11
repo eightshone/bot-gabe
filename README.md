@@ -1,4 +1,4 @@
-![alt text](readme/IMG_2106.png)
+![bot gabe](readme/banner.png)
 # BOT GABE
 A load testing cli tool that simulates bots behavior
 

@@ -43,7 +43,7 @@ async function runTest(
 
     if (failureRate >= failureThresholdPercentage) {
       console.log("\nFailure threshold reached. Stopping test.");
-      break;
+      return;
     }
 
     batchSize *= incrementFactor;

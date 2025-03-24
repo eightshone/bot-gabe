@@ -1,4 +1,5 @@
 import axios from "axios";
+import { VERSION } from "../../utils/consts";
 
 async function sendRequests(
   urls: string[],
@@ -22,6 +23,9 @@ async function sendRequests(
       axios
         .get(urls[(urls.length - 1) % batchSize], {
           timeout,
+          headers: {
+            "User-Agent": `BotGabe/${VERSION}(+https://github.com/eightshone/bot-gabe)`,
+          },
         })
         .then(() => {
           successCount++;

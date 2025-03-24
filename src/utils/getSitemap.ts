@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getSitemap = async (url: string) => {
+async function getSitemap(url: string) {
   let sitemap = "sitemap.xml";
   const response = await axios.get(`${url}/robots.txt`);
   if (response?.data) {
@@ -15,6 +15,6 @@ const getSitemap = async (url: string) => {
   }
 
   return sitemap;
-};
+}
 
 export default getSitemap;
